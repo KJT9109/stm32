@@ -6,6 +6,9 @@
  */
 
 #include "tcp_server.h"
+#include "Camera_motion.h"
+
+#include "debug_mode.h"
 
 void tcp_server_init(void)
 {
@@ -22,8 +25,10 @@ void tcp_server_init(void)
 			/* TCP Listening */
 			tcp_server_pcb = tcp_listen(tcp_server_pcb);
 			/* Define Callback Function if a client is Connected */
-			tcp_accept(tcp_server_pcb, tcp_server_accept);
-		}
+			 tcp_accept(tcp_server_pcb, tcp_server_accept);
+
+
+ 		}
 		else
 		{
 			/* deallocate the pcb */
@@ -32,7 +37,7 @@ void tcp_server_init(void)
 	}
 }
 
-static err_t tcp_server_accept(void *arg, struct tcp_pcb *accept_pcb, err_t err)
+err_t tcp_server_accept(void *arg, struct tcp_pcb *accept_pcb, err_t err)
 {
 
 	err_t ret_err;
@@ -76,7 +81,7 @@ static err_t tcp_server_accept(void *arg, struct tcp_pcb *accept_pcb, err_t err)
 	}
 }
 
-static err_t tcp_server_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p,
+err_t tcp_server_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p,
 		err_t err)
 {
 
@@ -143,28 +148,21 @@ static err_t tcp_server_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p,
 			recv_buf = p->payload;
 			len = p->len;
 			strncpy(cp, recv_buf, p->len);
-			cp[len] ='\0';
+			cp[len] = '\0';
 
-			if (strcmp(cp, "command01") == 0)
+			if (strcmp(cp, "cmt1") == 0)
 			{
-				tcp_write(tpcb, "recv command01", sizeof("recv command01"),
-						TCP_WRITE_FLAG_COPY);
+				Camera_interface_test(tpcb);
 			}
-			else if (strcmp(cp, "command02") == 0)
+			else if (strcmp(cp, "capture1") == 0)
 			{
-				tcp_write(tpcb, "recv command02", sizeof("recv command02"),
-						TCP_WRITE_FLAG_COPY);
-			}
 
-			else if (strcmp(cp, "command03") == 0)
-			{
-				tcp_write(tpcb, "recv command03", sizeof("recv command03"),
-						TCP_WRITE_FLAG_COPY);
+				Camera_Capture(tpcb);
 			}
 
 			else
 			{
-				tcp_write(tpcb, p->payload, p->len, 1);
+				tcp_write(tpcb, "check Command", sizeof("check Command"), 1);
 			}
 
 			pbuf_free(p);
@@ -195,7 +193,7 @@ static err_t tcp_server_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p,
 	return ret_err;
 }
 
-static void tcp_server_send(struct tcp_pcb *tpcb, struct tcp_server_struct *es)
+void tcp_server_send(struct tcp_pcb *tpcb, struct tcp_server_struct *es)
 {
 
 	struct pbuf *ptr;
@@ -247,8 +245,7 @@ static void tcp_server_send(struct tcp_pcb *tpcb, struct tcp_server_struct *es)
 		}
 	}
 }
-
-static err_t tcp_server_sent(void *arg, struct tcp_pcb *tpcb, u16_t len)
+err_t tcp_server_sent(void *arg, struct tcp_pcb *tpcb, u16_t len)
 {
 
 	struct tcp_server_struct *es;
@@ -264,7 +261,7 @@ static err_t tcp_server_sent(void *arg, struct tcp_pcb *tpcb, u16_t len)
 	}
 	else
 	{
-		//FPGA_data(tpcb);
+
 
 		/* if no more data to send and client closed connection*/
 		if (es->state == ES_CLOSING)
@@ -273,7 +270,32 @@ static err_t tcp_server_sent(void *arg, struct tcp_pcb *tpcb, u16_t len)
 	return ERR_OK;
 }
 
-static err_t tcp_server_poll(void *arg, struct tcp_pcb *tpcb)
+err_t tcp_camera_sent(void *arg, struct tcp_pcb *tpcb, u16_t len)
+{
+
+	struct tcp_server_struct *es;
+
+	LWIP_UNUSED_ARG(len);
+
+	es = (struct tcp_server_struct *) arg;
+
+	if (es->p != NULL)
+	{
+		/* still got pbufs to send */
+		tcp_server_send(tpcb, es);
+	}
+	else
+	{
+		second_picture_data(tpcb);
+
+		/* if no more data to send and client closed connection*/
+		if (es->state == ES_CLOSING)
+			tcp_server_connection_close(tpcb, es);
+	}
+	return ERR_OK;
+}
+
+err_t tcp_server_poll(void *arg, struct tcp_pcb *tpcb)
 {
 	err_t ret_err;
 	struct tcp_server_struct *es;
@@ -317,7 +339,7 @@ static err_t tcp_server_poll(void *arg, struct tcp_pcb *tpcb)
  * param  	es		: pointer on echo_state structure
  * retval 	None
  */
-static void tcp_server_connection_close(struct tcp_pcb *tpcb,
+void tcp_server_connection_close(struct tcp_pcb *tpcb,
 		struct tcp_server_struct *es)
 {
 
@@ -346,7 +368,7 @@ static void tcp_server_connection_close(struct tcp_pcb *tpcb,
  * retval 	None
  */
 
-static void tcp_server_error(void *arg, err_t err)
+void tcp_server_error(void *arg, err_t err)
 {
 	struct tcp_server_struct *es;
 

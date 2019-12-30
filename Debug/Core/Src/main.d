@@ -64,7 +64,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h \
+ ../Arducam/Arducam.h ../Arducam/Camera_motion.h ../Core/Inc/bool.h \
+ ../Arducam/Camera_function.h ../Arducam/Arducam.h \
+ ../Core/Inc/debug_mode.h
 
 ../Core/Inc/main.h:
 
@@ -207,3 +210,15 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h:
+
+../Arducam/Arducam.h:
+
+../Arducam/Camera_motion.h:
+
+../Core/Inc/bool.h:
+
+../Arducam/Camera_function.h:
+
+../Arducam/Arducam.h:
+
+../Core/Inc/debug_mode.h:

@@ -28,6 +28,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "tcp_server.h"
+#include "Arducam.h"
+#include "Camera_motion.h"
+#include "Camera_function.h"
+#include "stm32f4xx_hal.h"
+#include "debug_mode.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,6 +42,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 
 /* USER CODE END PD */
 
@@ -96,6 +102,24 @@ int main(void)
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
   tcp_server_init();
+  DWT_Delay_Init();
+
+  /*
+   * Camera initalize code
+   */
+
+  set_format(JPEG);
+  initCAM();
+  set_bit(0x03,0x02);
+  clear_fifo_flag();
+  write_reg(0x01,0x00);
+  OV5642_set_JPEG_size(OV5642_1600x1200);
+
+#if DEBUG
+  	printf("start Debug Mode \n\r");
+#endif
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,6 +130,8 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  MX_LWIP_Process();
+
+
   }
   /* USER CODE END 3 */
 }

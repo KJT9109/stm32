@@ -1,0 +1,11 @@
+/Arducam/
+/Core/
+/Drivers/
+/LWIP/
+/Middlewares/
+/Startup/
+/makefile
+/objects.list
+/objects.mk
+/sources.mk
+/Src/

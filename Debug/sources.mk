@@ -16,6 +16,7 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+Arducam \
 Core/Src \
 Drivers/STM32F4xx_HAL_Driver/Src \
 LWIP/App \
@@ -27,5 +28,6 @@ Middlewares/Third_Party/LwIP/src/core/ipv4 \
 Middlewares/Third_Party/LwIP/src/core/ipv6 \
 Middlewares/Third_Party/LwIP/src/netif \
 Middlewares/Third_Party/LwIP/src/netif/ppp \
+Src \
 Startup \
 

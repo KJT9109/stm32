@@ -58,15 +58,16 @@ struct tcp_server_struct
  *
  */
 void tcp_server_init(void);
-static err_t tcp_server_accept(void *arg, struct tcp_pcb *newpcb, err_t err);
-static err_t tcp_server_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p,
+err_t tcp_server_accept(void *arg, struct tcp_pcb *newpcb, err_t err);
+err_t tcp_server_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p,
 		err_t err);
-static void tcp_server_error(void *arg, err_t err);
-static err_t tcp_server_poll(void *arg, struct tcp_pcb *tpcb);
-static err_t tcp_server_sent(void *arg, struct tcp_pcb *tpcb, u16_t len);
-static void tcp_server_send(struct tcp_pcb *tpcb, struct tcp_server_struct *es);
-static void tcp_server_connection_close(struct tcp_pcb *tpcb,
+void tcp_server_error(void *arg, err_t err);
+err_t tcp_server_poll(void *arg, struct tcp_pcb *tpcb);
+err_t tcp_server_sent(void *arg, struct tcp_pcb *tpcb, u16_t len);
+void tcp_server_send(struct tcp_pcb *tpcb, struct tcp_server_struct *es);
+void tcp_server_connection_close(struct tcp_pcb *tpcb,
 		struct tcp_server_struct *es);
+err_t tcp_camera_sent(void *arg, struct tcp_pcb *tpcb, u16_t len);
 
 /*
  * parameter

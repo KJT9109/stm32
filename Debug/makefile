@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Startup/subdir.mk
+-include Src/subdir.mk
 -include Middlewares/Third_Party/LwIP/src/netif/ppp/subdir.mk
 -include Middlewares/Third_Party/LwIP/src/netif/subdir.mk
 -include Middlewares/Third_Party/LwIP/src/core/ipv6/subdir.mk
@@ -20,6 +21,7 @@ RM := rm -rf
 -include LWIP/App/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Src/subdir.mk
+-include Arducam/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -46,8 +48,8 @@ STM32F4_5MP_OV5642_TCP.list \
 all: STM32F4_5MP_OV5642_TCP.elf secondary-outputs
 
 # Tool invocations
-STM32F4_5MP_OV5642_TCP.elf: $(OBJS) $(USER_OBJS) C:\Users\rlawl\Desktop\STM32\STM32F407VETX_FLASH.ld
-	arm-none-eabi-gcc -o "STM32F4_5MP_OV5642_TCP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\rlawl\Desktop\STM32\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F4_5MP_OV5642_TCP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F4_5MP_OV5642_TCP.elf: $(OBJS) $(USER_OBJS) C:\Users\rlawl\Workplaces\STM32F4_5MP_OV5642_TCP\STM32F407VETX_FLASH.ld
+	arm-none-eabi-gcc -o "STM32F4_5MP_OV5642_TCP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\rlawl\Workplaces\STM32F4_5MP_OV5642_TCP\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F4_5MP_OV5642_TCP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

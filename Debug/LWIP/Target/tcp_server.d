@@ -66,7 +66,8 @@ LWIP/Target/tcp_server.o: ../LWIP/Target/tcp_server.c \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/spi.h \
- ../Core/Inc/gpio.h
+ ../Core/Inc/gpio.h ../Arducam/Camera_motion.h ../Core/Inc/bool.h \
+ ../Core/Inc/debug_mode.h
 
 ../LWIP/Target/tcp_server.h:
 
@@ -209,3 +210,9 @@ LWIP/Target/tcp_server.o: ../LWIP/Target/tcp_server.c \
 ../Core/Inc/spi.h:
 
 ../Core/Inc/gpio.h:
+
+../Arducam/Camera_motion.h:
+
+../Core/Inc/bool.h:
+
+../Core/Inc/debug_mode.h:

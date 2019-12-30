@@ -1,3 +1,5 @@
+"Arducam/Camera_function.o"
+"Arducam/Camera_motion.o"
 "Core/Src/gpio.o"
 "Core/Src/i2c.o"
 "Core/Src/main.o"
@@ -98,4 +100,6 @@
 "Middlewares/Third_Party/LwIP/src/netif/ppp/upap.o"
 "Middlewares/Third_Party/LwIP/src/netif/ppp/utils.o"
 "Middlewares/Third_Party/LwIP/src/netif/ppp/vj.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
 "Startup/startup_stm32f407vetx.o"
