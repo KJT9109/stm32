@@ -48,8 +48,8 @@ STM32F4_5MP_OV5642_TCP.list \
 all: STM32F4_5MP_OV5642_TCP.elf secondary-outputs
 
 # Tool invocations
-STM32F4_5MP_OV5642_TCP.elf: $(OBJS) $(USER_OBJS) C:\Users\rlawl\Workplaces\STM32F4_5MP_OV5642_TCP\STM32F407VETX_FLASH.ld
-	arm-none-eabi-gcc -o "STM32F4_5MP_OV5642_TCP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\rlawl\Workplaces\STM32F4_5MP_OV5642_TCP\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F4_5MP_OV5642_TCP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F4_5MP_OV5642_TCP.elf: $(OBJS) $(USER_OBJS) C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP\STM32F407VETX_FLASH.ld
+	arm-none-eabi-gcc -o "STM32F4_5MP_OV5642_TCP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F4_5MP_OV5642_TCP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

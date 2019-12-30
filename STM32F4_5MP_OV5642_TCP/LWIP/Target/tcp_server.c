@@ -79,6 +79,13 @@ err_t tcp_server_accept(void *arg, struct tcp_pcb *accept_pcb, err_t err)
 
 		ret_err = ERR_OK;
 	}
+	else
+	  {
+	    tcp_server_connection_close(accept_pcb, es);
+	    ret_err = ERR_MEM;
+	  }
+
+	return ret_err;
 }
 
 err_t tcp_server_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p,
