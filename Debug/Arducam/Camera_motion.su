@@ -1,4 +1,0 @@
-Camera_motion.c:22:6:Camera_Capture	16	static
-Camera_motion.c:53:6:first_picture_data	24	static
-Camera_motion.c:88:6:second_picture_data	24	static
-Camera_motion.c:163:6:Camera_interface_test	24	static
