@@ -53,6 +53,12 @@ C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\EWARM/../Middlewares
 -I
 C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\EWARM/../Drivers/CMSIS/Include
 -I
+C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\Arducam
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\Core\Include
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\DSP\Include
+-I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\inc\c
@@ -104,6 +110,12 @@ C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\Middlewares\Third_Pa
 C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\Middlewares\Third_Party\LwIP\system\arch
 -I
 C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\Drivers\CMSIS\Include
+-I
+C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\Arducam
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\Core\Include
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\DSP\Include
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

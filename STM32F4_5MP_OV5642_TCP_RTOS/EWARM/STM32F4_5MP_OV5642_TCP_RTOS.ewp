@@ -11,7 +11,7 @@
       <name>General</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>29</version>
+        <version>31</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -32,11 +32,11 @@
         </option>
         <option>
           <name>Input description</name>
-          <state>No specifier n, no float nor long long, no scan set, no assignment suppressing, with multibyte support.</state>
+          <state>Full formatting, with multibyte support.</state>
         </option>
         <option>
           <name>Output description</name>
-          <state>No specifier a, A, no specifier n, no float nor long long, with multibyte support.</state>
+          <state>Full formatting, with multibyte support.</state>
         </option>
         <option>
           <name>GOutputBinary</name>
@@ -66,7 +66,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>8.20.1.14181</state>
+          <state>8.32.4.20866</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -112,16 +112,16 @@
         </option>
         <option>
           <name>RTConfigPath2</name>
-          <state>$TOOLKIT_DIR$\INC\c\DLib_Config_Full.h</state>
+          <state>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</state>
         </option>
         <option>
           <name>GBECoreSlave</name>
-          <version>26</version>
+          <version>27</version>
           <state>39</state>
         </option>
         <option>
           <name>OGUseCmsis</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>OGUseCmsisDspLib</name>
@@ -133,17 +133,17 @@
         </option>
         <option>
           <name>CoreVariant</name>
-          <version>26</version>
+          <version>27</version>
           <state>39</state>
         </option>
         <option>
           <name>GFPUDeviceSlave</name>
-          <state></state>
+          <state>STM32F407VE	ST STM32F407VE</state>
         </option>
         <option>
           <name>FPU2</name>
           <version>0</version>
-          <state>6</state>
+          <state>4</state>
         </option>
         <option>
           <name>NrRegs</name>
@@ -156,7 +156,7 @@
         </option>
         <option>
           <name>GFPUCoreSlave2</name>
-          <version>26</version>
+          <version>27</version>
           <state>39</state>
         </option>
         <option>
@@ -200,13 +200,22 @@
           <name>DSPExtension</name>
           <state>1</state>
         </option>
+        <option>
+          <name>TrustZone</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>TrustZoneModes</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>34</version>
+        <version>35</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -217,7 +226,6 @@
           <name>CCDefines</name>
           <state>USE_HAL_DRIVER</state>
           <state>STM32F407xx</state>
-          <state></state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -278,7 +286,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>11111110</state>
+          <state>00000000</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -366,6 +374,7 @@
           <state>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/include/compat/stdc</state>
           <state>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/system/arch</state>
           <state>$PROJ_DIR$/../Drivers/CMSIS/Include</state>
+          <state>C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\Arducam</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -381,7 +390,7 @@
         </option>
         <option>
           <name>CCOptLevel</name>
-          <state>3</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCOptStrategy</name>
@@ -390,7 +399,7 @@
         </option>
         <option>
           <name>CCOptLevelSlave</name>
-          <state>3</state>
+          <state>0</state>
         </option>
         <option>
           <name>CompilerMisraRules98</name>
@@ -478,6 +487,10 @@
         <option>
           <name>IccRTTI2</name>
           <state>0</state>
+        </option>
+        <option>
+          <name>OICompilerExtraOption</name>
+          <state>1</state>
         </option>
       </data>
     </settings>
@@ -628,6 +641,7 @@
         <option>
           <name>AUserIncludes</name>
           <state>$PROJ_DIR$\..\Core\Inc</state>
+          <state>C:\Users\rlawl\Workplaces\stm32\STM32F4_5MP_OV5642_TCP_RTOS\Arducam</state>
         </option>
         <option>
           <name>AExtraOptionsCheckV2</name>
@@ -699,7 +713,7 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>20</version>
+        <version>22</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1011,6 +1025,14 @@
           <name>IlinkLocaleSelect</name>
           <state>1</state>
         </option>
+        <option>
+          <name>IlinkTrustzoneImportLibraryOut</name>
+          <state>STM32F4_5MP_OV5642_TCP_RTOS_import_lib.o</state>
+        </option>
+        <option>
+          <name>OILinkExtraOption</name>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1045,50 +1067,71 @@
     <group>
       <name>EWARM</name>
       <file>
-        <name>$PROJ_DIR$/startup_stm32f407xx.s</name>
+        <name>$PROJ_DIR$\startup_stm32f407xx.s</name>
       </file>
     </group>
     <group>
       <name>User</name>
       <group>
+        <name>ArduCAM</name>
+        <file>
+          <name>$PROJ_DIR$\..\Arducam\Arducam.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\Arducam\Camera_function.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\Arducam\Camera_function.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\Arducam\Camera_motion.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\Arducam\Camera_motion.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\Arducam\ov5642_reg.h</name>
+        </file>
+      </group>
+      <group>
         <name>Core</name>
         <file>
-          <name>$PROJ_DIR$/../Core/Src/main.c</name>
+          <name>$PROJ_DIR$\..\Core\Src\main.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../Core/Src/gpio.c</name>
+          <name>$PROJ_DIR$\..\Core\Src\gpio.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../Core/Src/freertos.c</name>
+          <name>$PROJ_DIR$\..\Core\Src\freertos.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../Core/Src/i2c.c</name>
+          <name>$PROJ_DIR$\..\Core\Src\i2c.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../Core/Src/spi.c</name>
+          <name>$PROJ_DIR$\..\Core\Src\spi.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../Core/Src/stm32f4xx_it.c</name>
+          <name>$PROJ_DIR$\..\Core\Src\stm32f4xx_it.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../Core/Src/stm32f4xx_hal_msp.c</name>
+          <name>$PROJ_DIR$\..\Core\Src\stm32f4xx_hal_msp.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../Core/Src/stm32f4xx_hal_timebase_tim.c</name>
+          <name>$PROJ_DIR$\..\Core\Src\stm32f4xx_hal_timebase_tim.c</name>
         </file>
       </group>
       <group>
         <name>LWIP</name>
         <group>
-          <name>Target</name>
+          <name>App</name>
           <file>
-            <name>$PROJ_DIR$/../LWIP/Target/ethernetif.c</name>
+            <name>$PROJ_DIR$\..\LWIP\App\lwip.c</name>
           </file>
         </group>
         <group>
-          <name>App</name>
+          <name>Target</name>
           <file>
-            <name>$PROJ_DIR$/../LWIP/App/lwip.c</name>
+            <name>$PROJ_DIR$\..\LWIP\Target\ethernetif.c</name>
           </file>
         </group>
       </group>
@@ -1097,69 +1140,69 @@
   <group>
     <name>Drivers</name>
     <group>
-      <name>STM32F4xx_HAL_Driver</name>
+      <name>CMSIS</name>
       <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c</name>
+        <name>$PROJ_DIR$\..\Core\Src\system_stm32f4xx.c</name>
       </file>
     </group>
     <group>
-      <name>CMSIS</name>
+      <name>STM32F4xx_HAL_Driver</name>
       <file>
-        <name>$PROJ_DIR$/../Core/Src/system_stm32f4xx.c</name>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_eth.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c</name>
       </file>
     </group>
   </group>
@@ -1168,283 +1211,283 @@
     <group>
       <name>FreeRTOS</name>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/croutine.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\croutine.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/list.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\list.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/queue.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\queue.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/tasks.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\tasks.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/timers.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\timers.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/portable/IAR/ARM_CM4F/port.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\portable\IAR\ARM_CM4F\port.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/FreeRTOS/Source/portable/IAR/ARM_CM4F/portasm.s</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\portable\IAR\ARM_CM4F\portasm.s</name>
       </file>
     </group>
     <group>
       <name>LwIP</name>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/auth.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\auth.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/ccp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\ccp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/chap_ms.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\chap_ms.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/chap-md5.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\chap-md5.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/chap-new.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\chap-new.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/demand.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\demand.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/eap.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\eap.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/eui64.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\eui64.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/fsm.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\fsm.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/ipcp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\ipcp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\ipv6cp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/lcp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\lcp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/magic.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\magic.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/mppe.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\mppe.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/multilink.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\multilink.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/ppp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\ppp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/pppapi.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\pppapi.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/pppcrypt.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\pppcrypt.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/pppoe.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\pppoe.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/pppol2tp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\pppol2tp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/pppos.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\pppos.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/upap.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\upap.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/utils.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\utils.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/vj.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\vj.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/bridgeif.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\bridgeif.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/bridgeif_fdb.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\bridgeif_fdb.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ethernet.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ethernet.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/lowpan6.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\lowpan6.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/lowpan6_ble.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\lowpan6_ble.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/lowpan6_common.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\lowpan6_common.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/slipif.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\slipif.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/zepif.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\zepif.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\netif\ppp\ecp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/api_lib.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\api_lib.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/api_msg.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\api_msg.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/err.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\err.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/if_api.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\if_api.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/netbuf.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\netbuf.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/netdb.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\netdb.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/netifapi.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\netifapi.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/sockets.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\sockets.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/api/tcpip.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\api\tcpip.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/altcp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\altcp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/altcp_alloc.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\altcp_alloc.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/altcp_tcp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\altcp_tcp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/def.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\def.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/dns.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\dns.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/inet_chksum.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\inet_chksum.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/init.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\init.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ip.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ip.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/mem.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\mem.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/memp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\memp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/netif.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\netif.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/pbuf.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\pbuf.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/raw.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\raw.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/stats.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\stats.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/sys.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\sys.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/tcp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\tcp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/tcp_in.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\tcp_in.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/tcp_out.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\tcp_out.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/timeouts.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\timeouts.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/udp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\udp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv4/autoip.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv4\autoip.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv4\dhcp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv4\etharp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv4\icmp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv4/igmp.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv4\igmp.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv4\ip4.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv4\ip4_addr.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv4\ip4_frag.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/dhcp6.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\dhcp6.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/ethip6.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\ethip6.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/icmp6.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\icmp6.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/inet6.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\inet6.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/ip6.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\ip6.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_addr.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\ip6_addr.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_frag.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\ip6_frag.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/mld6.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\mld6.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/core/ipv6/nd6.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\core\ipv6\nd6.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/system/OS/sys_arch.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\system\OS\sys_arch.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.c</name>
+        <name>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\apps\mqtt\mqtt.c</name>
       </file>
     </group>
   </group>
