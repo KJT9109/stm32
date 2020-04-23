@@ -14,14 +14,19 @@ IP Address: 192.168.001.111 <br>
 Netmask address: 255.255.255.000 <br>
 Gateway Address: 192.168.001.001 <br>
 사진 전송 명령어: capture01  <br>
-카메라 인터페이스 명령어: cmt1 <br>
+카메라 인터페이스 확인 명령어: cmt1 <br>
 
 ## stm32F4_5MP_OV5642_USB Project
 Update ... Window 10에서 USB Driver 문제로 중지
 
 
 ## stm32F4_5MP_OV5642_RTOS Project
-Update ...
+IP Address: 192.168.001.111 <br>
+Netmask address: 255.255.255.000 <br>
+Gateway Address: 192.168.001.001 <br>
+사진 전송 명령어 : CMRA  <br>
+카메라 인터페이스 확인 명령어 :CMIT  <br>
+최종 구현 완료
 
 
 
