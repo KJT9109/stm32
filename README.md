@@ -5,7 +5,8 @@ MCU: STM32F4 <br>
 Compiler Tool: STM32CUBEIDE 1.0.2 <br>
 Configuration Tool: STM32CUBEMX 5.3.0 <br>
 완료된 프로젝트: STM32F4_5MP_OV5642_TCP <br>
-진행중인 프로젝트: stm32F4_5MP_OV5642_RTOS <br>
+                STM32F4_5MP_OV5642_RTOS <br>
+진행중인 프로젝트:  -
 
 
 
