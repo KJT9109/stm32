@@ -34,7 +34,7 @@ void Camera_Capture(struct netconn *cmraconn)
     if (get_bit(0x41, 0x08))
     {
 #ifdef DEBUG
-      printf("get_bit is true \n\r");
+   //   printf("get_bit is true \n\r");
 #endif
       Camera_Module_length = read_fifo_length();
       first_picture_data();
@@ -120,7 +120,7 @@ void second_picture_data(struct netconn *cmraconn)
     {
       netconn_write(cmraconn,cmra_buf,cmra_flag,NETCONN_COPY);
       cmra_flag = 0;
-      osDelay(1);
+     // osDelay(1); 굳이 호출 안해도 정상 동작 확인.
     }
     
   }
@@ -130,49 +130,41 @@ void second_picture_data(struct netconn *cmraconn)
 void Camera_interface_test(struct netconn *cmraconn)
 {
   
-  uint8_t Camera_pin_check;
+  uint8_t CMRA_SPI_Pin,CMRA_I2C_Pin;
 
 
   
   /********** SPI INTERFACE test ***************/
   
   write_reg(0x00, 0x88);
-  Camera_pin_check = read_reg(0x00);
+  rdSensorReg16_8(0x300a, &CMRA_I2C_Pin);
+  CMRA_SPI_Pin = read_reg(0x00);
   
-  if (Camera_pin_check == 0x88)
+  if ((CMRA_SPI_Pin == 0x88)&&(CMRA_I2C_Pin == 0x56))
   {
-    char *data = "Camera SPI Connected";
-    netconn_write(cmraconn,data,sizeof("Camera SPI Connected"),NETCONN_COPY);
+    char *data = "Camera Interface Pin Connected";
+    netconn_write(cmraconn,data,sizeof("Camera Interface Pin Connected"),NETCONN_COPY);
+
+
+  }
+  else if(CMRA_SPI_Pin != 0x88)
+  {
+	    char *data = "Camera SPI Pin DisConnected";
+	    netconn_write(cmraconn,data,sizeof("Camera SPI PIn DisConnected"),NETCONN_COPY);
+
   }
   else
   {
-    char *data = "Camera SPI Disconnected";
-    netconn_write(cmraconn,data,sizeof("Camera SPI DisConnected"),NETCONN_COPY);
+	    char *data = "Camera I2c Pin DisConnected";
+	    netconn_write(cmraconn,data,sizeof("Camera SPI Pin DisConnected"),NETCONN_COPY);
+
   }
     
   
   
   /********** SPI INTERFACE test END ***************/
   
-  /********** I2C INTERFACE test ******************/
-  
-  rdSensorReg16_8(0x300a, &Camera_pin_check);
-  if (Camera_pin_check == 0x56)
-  {
-    char *data = "Camera i2C Connected";
-    netconn_write(cmraconn,data,sizeof("Camera i2C Connected"),NETCONN_NOFLAG);
-    
-  }
-  else
-  {
-    char *data = "Camera i2C Disconnected";
-    netconn_write(cmraconn,data,sizeof("Camera i2C Disconnected"),NETCONN_NOFLAG);   
-    
-  }
-  osDelay(100);
-  
-  
-  /********** I2C INTERFACE test END ******************/
+
   
 }
 

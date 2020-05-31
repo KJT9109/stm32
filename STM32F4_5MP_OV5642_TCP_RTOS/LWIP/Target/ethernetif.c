@@ -668,7 +668,7 @@ void ethernetif_set_link(void* argument)
 }
 
 /* USER CODE BEGIN 7 */
-#define LWIP_NETIF_LINK_CALLBACK 1
+
 /* USER CODE END 7 */
 
 #if LWIP_NETIF_LINK_CALLBACK

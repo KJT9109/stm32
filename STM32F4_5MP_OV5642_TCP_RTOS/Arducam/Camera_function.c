@@ -20,6 +20,7 @@
 #include "i2c.h"
 #include "gpio.h"
 
+#define debug 0
 uint16_t m_fmt;
 
 void set_format (uint16_t fmt)
@@ -86,7 +87,7 @@ void wrSensorReg16_8 (uint16_t tx_addr, unsigned char rx_buf)
   if(HAL_I2C_Mem_Write (&hi2c1, 0x78, tx_addr, 2, &rx_buf, 1, 1000) != HAL_OK)
   {
 #ifdef DEBUG
-    printf("I2c Write Problem \n\r");
+   // printf("I2c Write Problem \n\r");
 #endif
     
   }
@@ -100,7 +101,7 @@ void rdSensorReg16_8 (uint16_t tx_addr, uint8_t* rx_buf)
   if((HAL_I2C_Mem_Read(&hi2c1, 0x78, tx_addr, 2, rx_buf, 1, 1000))!= HAL_OK)
   {
 #ifdef DEBUG
-    printf("I2c Read Problem \n\r");
+   // printf("I2c Read Problem \n\r");
 #endif
   }
   HAL_Delay (1);
@@ -122,7 +123,7 @@ int wrSensorRegs16_8 (const struct sensor_reg reglist[])
     if((HAL_I2C_Mem_Write(&hi2c1, 0x78, reg_addr, 2, &reg_val, 1, 1000))!= HAL_OK)
     {
 #ifdef DEBUG
-      printf("I2c Write Problem \n\r");
+   //   printf("I2c Write Problem \n\r");
 #endif
     }
     next++;
