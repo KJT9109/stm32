@@ -20,13 +20,13 @@ Gateway Address: DHCP 사용 <br>
 
 간략한 Task 설명
 
-Console Task: 콘솔에서 보내는 명령어 관리
-EthernetAPP Task: Client 로 동작하며 Server 명령어 실행
-Lepton Task: Lepton 설정 및 관리
-TempDetection Task: 이미지 프레임을 검사하여 threshold 넘는 온도 값이 있을 시 알람 발생
-
+Console Task: 콘솔에서 보내는 명령어 관리<br>
+EthernetAPP Task: Client 로 동작하며 Server 명령어 실행<br>
+Lepton Task: Lepton 설정 및 관리<br>
+TempDetection Task: 이미지 프레임을 검사하여 threshold 넘는 온도 값이 있을 시 알람 발생<br>
+<br>
 추후 업데이트...
-
+<br>
 ## STM32F4_5MP_OV5642_TCP Project
 IP Address: 192.168.001.111 <br>
 Netmask address: 255.255.255.000 <br>
