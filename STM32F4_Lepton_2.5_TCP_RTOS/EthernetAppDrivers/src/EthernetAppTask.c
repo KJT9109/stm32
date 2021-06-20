@@ -20,9 +20,8 @@ void vEthernetAppTask(void *argument)
   struct netconn *netPtr;
   struct netbuf *netBuf;
 
-  void *data;
-
   uint16_t len;
+  void *data;
 
 
   for(;;)
@@ -44,26 +43,34 @@ void vEthernetAppTask(void *argument)
 
 	netconn_connect(netPtr, &ipaddr, 1460);
 
-	while (netconn_recv(netPtr, &netBuf) == ERR_OK)
+	netPtr->recv_timeout = 1000;
+
+	while(1)
 	{
-        do
-        {
-          netbuf_data(netBuf, &data, &len);
-          netconn_write(netPtr, data, len, NETCONN_COPY);
+	  while (netconn_recv(netPtr, &netBuf) == ERR_OK)
+	  {
 
-        } while (netbuf_next(netBuf) >= 0);
+		netbuf_data(netBuf, &data, &len);
 
-        netbuf_delete(netBuf);
-	}
+		if(strncmp(data,"LEPTON", len) == 0)
+	 	{
+	      netconn_write(netPtr, (char *)"Lepton Recive !!! \r\n", sizeof("Lepton Recive !!! \r\n"), NETCONN_COPY);
+		}
+		else
+		{
+	      netconn_write(netPtr, (char *)" Not User Command \r\n", sizeof("Not User Command \r\n"), NETCONN_COPY);
+		}
 
-    netconn_close(netPtr);
-    netconn_delete(netPtr);
+		netbuf_delete(netBuf);
+	  }
 
-    osDelay(1000);
+	  netconn_write(netPtr,(char *)"Test Non Blocking Recv\r\n", sizeof("Test Non Blocking Recv\r\n"),NETCONN_COPY);
 
+    }
   }
 
-
+   netconn_close(netPtr);
+   netconn_delete(netPtr);
 
 }
 
