@@ -8,6 +8,8 @@
 #include "EthernetAppDriver.h"
 
 extern struct netif gnetif;
+extern osEventFlagsId_t lepton_id;
+
 
 void vEthernetAppTask(void *argument)
 {
@@ -52,11 +54,13 @@ void vEthernetAppTask(void *argument)
         {
           netconn_write(netPtr, (char* )"Lepton Recive !!! \r\n", sizeof("Lepton Recive !!! \r\n"),
               NETCONN_COPY);
+          osEventFlagsSet(lepton_id,VIDEO_REQ_SIGNAL);
         }
-        else if(strncmp(data, "exit", len) == 0)
+        else if(strncmp(data, "LEPTON2", len) == 0)
         {
           netconn_write(netPtr, (char* )"Program Exit !!! \r\n", sizeof("Program Exit !!! \r\n"),
                         NETCONN_COPY);
+          osEventFlagsSet(lepton_id,LEPTON_CONFIG_SIGNAL);
 
         }
         else

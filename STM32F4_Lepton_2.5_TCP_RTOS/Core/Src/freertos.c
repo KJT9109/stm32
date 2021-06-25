@@ -102,7 +102,8 @@ void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName)
    called if a stack overflow is detected. */
 
 	//TODO: Stack Over Flow 처리 코드
-	for(int i = 0; i < 100; i++); //Break Point Code
+
+	for(;;);
 }
 /* USER CODE END 4 */
 
@@ -122,7 +123,7 @@ void vApplicationMallocFailedHook(void)
 
 
 	//TODO: Malloc Error 처리 코드
-	for(int i = 0; i < 100; i++); //Break Point Code
+  for(;;);
 
 }
 /* USER CODE END 5 */

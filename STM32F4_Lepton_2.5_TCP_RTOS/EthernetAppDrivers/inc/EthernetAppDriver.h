@@ -21,6 +21,8 @@
 
 #include "string.h"
 
+#include "LeptonAppDriver.h"
+
 #define IP_ADDRESS0   192
 #define IP_ADDRESS1   168
 #define IP_ADDRESS2   1

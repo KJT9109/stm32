@@ -11,11 +11,12 @@ osEventFlagsId_t lepton_id;
 
 void vLeptonTask(void *argument)
 {
-  lepton_id = osEventFlagsNew(NULL);
+  uint32_t debug = 0;
 
-  if (lepton_id == NULL)
+  if ((lepton_id = osEventFlagsNew(NULL)) == NULL)
   {
-    /* TODO : Error 메시지 및 처리 */
+    /* TODO : Error 처리 */
+    printf(" ERROR ## \n");
   }
 
   /* TODO : Lepton Init 구현 */
@@ -23,25 +24,22 @@ void vLeptonTask(void *argument)
   for (;;)
   {
     /* TODO :  Check Wait Video Frame Request Signal */
-    if (osEventFlagsWait(lepton_id, VIDEO_REQ_SIGNAL, osFlagsWaitAny, 1000) < 0)
+    if ((debug = osEventFlagsWait(lepton_id, VIDEO_REQ_SIGNAL, osFlagsWaitAny, 1000)) == VIDEO_REQ_SIGNAL)
     {
-      /* TODO : Error 처리 */
-    }
-    else
-    {
-      /* TODO : Start Video Frame Capture and send Mail Queue */
+      /* TODO : Message 처리 */
+      printf("Recv VIDEO Req Sig \n");
+
     }
 
     /* TODO : Wait Lepton Configuration Request Signal */
 
-    if (osEventFlagsWait(lepton_id, LEPTON_CONFIG_SIGNAL, osFlagsWaitAny, 1000) < 0)
+    if ((debug =osEventFlagsWait(lepton_id, LEPTON_CONFIG_SIGNAL, osFlagsWaitAny, 1000)) == LEPTON_CONFIG_SIGNAL)
     {
-      /* TODO : Error 처리 */
+      /* TODO : Message 처리 */
+      printf("Recv Config Req Sig \n");
+
     }
-    else
-    {
-      /* TODO : Set Lepton Configuration and Reply */
-    }
+
   }
 
 }

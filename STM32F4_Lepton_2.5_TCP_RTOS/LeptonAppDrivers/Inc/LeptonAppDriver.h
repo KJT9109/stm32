@@ -9,8 +9,9 @@
 #define INC_LEPTONAPPDRIVER_H_
 
 #include "cmsis_os2.h"
+#include "stdio.h"
 
-#define LEPTON_SIGNAL 0x55
+#define LEPTON_SIGNAL           0x55
 #define VIDEO_REQ_SIGNAL        ( LEPTON_SIGNAL << 0 )
 #define LEPTON_CONFIG_SIGNAL    ( LEPTON_SIGNAL << 1 )
 
