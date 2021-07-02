@@ -13,6 +13,7 @@ void vLeptonTask(void *argument)
 {
   uint32_t debug = 0;
 
+
   if ((lepton_id = osEventFlagsNew(NULL)) == NULL)
   {
     /* TODO : Error 처리 */
